@@ -19,11 +19,15 @@
 * {
   padding: 0;
   margin: 0;
-  flex-wrap: wrap;
-  background-color: black;
 }
+
+body{
+  cursor: url('Assets/user-cursor/Normal.png'), auto;
+}
+
 header {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   background-color: black;
   color: rgb(255, 255, 255);
@@ -35,9 +39,21 @@ header {
 header h1 {
   margin-top: 3px;
 }
+
+.section-title {
+  display: flex;
+  margin-top: 3px;
+  align-items: center;
+  margin-left: auto;
+  text-decoration: none;
+  color: #fff;
+  font-family: "FontHollowTest";
+  text-shadow: 0 0 3px #fff, 0 0 6px #fff;
+}
+
 .menu {
   display: flex;
-  gap: 45px;
+  gap: 60px;
   margin-left: auto;
   padding: 15px 40px;
   margin-top: 3px;
@@ -124,4 +140,171 @@ header img {
   height: auto;
   z-index: -1000;
   object-fit: cover;
+}
+
+#news{
+  padding: 100px;
+}
+
+#news-items{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, 400px);
+  grid-template-rows: repeat(3, 400px);
+  gap: 12rem;
+  justify-content: center;
+}
+
+.news-card{
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  min-height: 450px;
+  border-radius: 1rem;
+  position: relative;
+  overflow: visible;
+  box-shadow: 5px 5px 5px #ccc;
+  background-color: #000000;
+  box-shadow: 0 0 5px #000000, 0 0 10px #000000, 0 0 20px #000000, 0 0 40px #fff;
+  transition: transform 0.2s ease;
+}
+
+.card-inner {
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: #000;
+}
+  
+.news-content{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1rem;
+}
+
+.news-card h3{
+  padding: 1rem;
+  text-shadow: 0 0 1px #fff, 0 0 4px #fff;
+  color: #fff;
+}
+
+.news-card:hover {
+  transform: translateY(-5px) translateX(-3px);
+  box-shadow: 0 0 5px #000000, 0 0 10px #000000, 0 0 20px #ffffff, 0 0 40px #fff;
+}
+
+.news-card img{
+  max-width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  object-fit: fill;
+  display: block;
+}
+
+.see-more{
+  position: relative;
+  gap: 10px;
+  display: inline-flex;
+  margin-top: auto;
+  align-items: center;
+  padding: 1rem;
+  text-decoration: none;
+  padding-top: 1rem;
+  color: #fff;
+  text-shadow: 0 0 1px #fff, 0 0 4px #fff;
+}
+
+.news-content a{
+  font-size: larger;
+}
+
+.ferrao-seta{
+  width: 9rem;
+  height: auto;
+  align-items: center;
+}
+
+.see-more .ferrao-seta {
+  transition: transform 0.3s ease;
+}
+
+.see-more:hover .ferrao-seta {
+  transform: translateX(5px);
+}
+
+.see-more::before,
+.see-more::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-image: url("Assets/Images/ChatGPT Image 19 de fev. de 2026, 13_50_32.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0;
+  transition: 0.3s ease;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.see-more::before {
+  left: -35px;
+  transform: translateY(-50%) scaleX(-1);
+}
+
+.see-more::after {
+  right: -35px;
+}
+
+.see-more:hover {
+  text-shadow: 0 0 3px #fff, 0 0 6px #fff, 0 0 9px #fff;
+}
+
+.see-more:hover::before,
+.see-more:hover::after {
+  opacity: 1;
+}
+
+.news-content {
+  padding: 1rem 2.5rem;
+}
+
+.corner {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background-image: url("Assets/Images/Selected-icon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: 0.3s ease;
+  pointer-events: none;
+}
+
+.top-left {
+  top: -20px;
+  left: -20px;
+}
+
+.top-right {
+  top: -20px;
+  right: -20px;
+  transform: rotate(90deg);
+}
+
+.bottom-left {
+  bottom: -20px;
+  left: -20px;
+  transform: rotate(-90deg);
+}
+
+.bottom-right {
+  bottom: -20px;
+  right: -20px;
+  transform: rotate(180deg);
+}
+
+.news-card:hover .corner {
+  opacity: 1;
+  
 }
