@@ -4,131 +4,141 @@
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: "FontHollowTest";
   src: url("Fonts/Trajan Regular.otf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
   font-family: "FontHollowBold";
   src: url("Fonts/TrajanPro-Bold.otf") format("opentype");
   font-weight: bold;
   font-style: normal;
 }
+
+
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
-body{
+
+body {
   cursor: url('Assets/user-cursor/Normal.png'), auto;
 }
+
 
 header {
   display: flex;
   flex-wrap: wrap;
+  position: sticky;
+  top: 0;
   align-items: center;
-  background-color: black;
-  color: rgb(255, 255, 255);
   width: 100%;
+  background-color: #000;
+  color: #fff;
   font-family: "FontHollowTest";
   text-shadow: 0 0 3px #fff, 0 0 6px #fff;
-  z-index: 1;
+  z-index: 1000;
 }
+
 header h1 {
   margin-top: 3px;
 }
 
+header img {
+  width: 75px;
+  height: auto;
+  max-width: 100%;
+  background-color: transparent;
+}
+
 .section-title {
-  display: flex;
-  margin-top: 3px;
-  align-items: center;
   margin-left: auto;
+  margin-top: 3px;
+  display: flex;
+  align-items: center;
   text-decoration: none;
   color: #fff;
   font-family: "FontHollowTest";
   text-shadow: 0 0 3px #fff, 0 0 6px #fff;
 }
+
 
 .menu {
   display: flex;
   gap: 60px;
   margin-left: auto;
-  padding: 15px 40px;
   margin-top: 3px;
+  padding: 15px 40px;
 }
+
 .menu a {
+  position: relative;
+  display: inline-block;
   text-decoration: none;
   color: #fff;
   transition: 0.3s ease;
-  position: relative;
-  display: inline-block;
-  transition: 0.3s ease;
 }
+
 .menu a:hover {
-  transform: translateY();
   text-shadow: 0 0 3px #fff, 0 0 6px #fff, 0 0 9px #fff;
 }
+
+
 .menu a::before,
 .menu a::after {
-  position: absolute;
-  opacity: 0;
-  transition: 0.3s ease;
-}
-.menu a::before {
   content: "";
   position: absolute;
-  left: -30px;
   top: 50%;
-  transform: translateY(-50%) scaleX(-1);
-
   width: 30px;
   height: 30px;
-
   background-image: url("Assets/Images/ChatGPT Image 19 de fev. de 2026, 13_50_32.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-
+  transform: translateY(-50%);
   opacity: 0;
   transition: 0.3s ease;
 }
 
+.menu a::before {
+  left: -30px;
+  transform: translateY(-50%) scaleX(-1);
+}
 
 .menu a::after {
-  content: "";
-  position: absolute;
   right: -30px;
-  top: 50%;
-  transform: translateY(-50%);
-
-  width: 30px;
-  height: 30px;
-
-  background-image: url("Assets/Images/ChatGPT Image 19 de fev. de 2026, 13_50_32.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-
-  opacity: 0;
-  transition: 0.3s ease;
 }
+
 .menu a:hover::before,
 .menu a:hover::after {
   opacity: 1;
 }
-header img {
-  max-width: 100%;
-  height: auto;
-  width: 75px;
-  background-color: transparent;
-}
+
+
 .linha-neon {
   width: 100%;
   height: 2px;
   background: #fff;
-  box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff;
+  box-shadow: 
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 40px #fff;
+}
+
+#main-content p{
+  color: #fff;
+  text-shadow: 0 0 3px #fff, 0 0 6px #fff;
+  text-align: justify;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding: 10px;
+  line-height: 25px;
 }
 .back-video {
   position: fixed;
@@ -136,36 +146,43 @@ header img {
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -1000;
   object-fit: cover;
+  z-index: -1000;
 }
 
-#news{
+
+#news {
   padding: 100px;
 }
 
-#news-items{
-  display:grid;
+#news-items {
+  display: grid;
   grid-template-columns: repeat(auto-fit, 400px);
   grid-template-rows: repeat(3, 400px);
   gap: 12rem;
   justify-content: center;
 }
 
-.news-card{
+
+.news-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 400px;
   min-height: 450px;
   border-radius: 1rem;
-  position: relative;
+  background-color: #000;
   overflow: visible;
-  box-shadow: 5px 5px 5px #ccc;
-  background-color: #000000;
-  box-shadow: 0 0 5px #000000, 0 0 10px #000000, 0 0 20px #000000, 0 0 40px #fff;
   transition: transform 0.2s ease;
+  box-shadow:
+    0 0 5px #000,
+    0 0 10px #000,
+    0 0 20px #fff,
+    0 0 40px #fff;
+}
+
+.news-card:hover {
+  transform: translateY(-5px) translateX(-3px);
 }
 
 .card-inner {
@@ -173,57 +190,51 @@ header img {
   overflow: hidden;
   background-color: #000;
 }
-  
-.news-content{
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  padding: 1rem;
-}
 
-.news-card h3{
-  padding: 1rem;
-  text-shadow: 0 0 1px #fff, 0 0 4px #fff;
-  color: #fff;
-}
-
-.news-card:hover {
-  transform: translateY(-5px) translateX(-3px);
-  box-shadow: 0 0 5px #000000, 0 0 10px #000000, 0 0 20px #ffffff, 0 0 40px #fff;
-}
-
-.news-card img{
-  max-width: 100%;
+.news-card img {
+  width: 100%;
   aspect-ratio: 16/9;
   object-fit: cover;
-  object-fit: fill;
   display: block;
 }
 
-.see-more{
-  position: relative;
-  gap: 10px;
-  display: inline-flex;
-  margin-top: auto;
-  align-items: center;
+.news-card h3 {
   padding: 1rem;
-  text-decoration: none;
-  padding-top: 1rem;
   color: #fff;
   text-shadow: 0 0 1px #fff, 0 0 4px #fff;
 }
 
-.news-content a{
+
+.news-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1rem 2.5rem;
+}
+
+.news-content a {
   font-size: larger;
 }
 
-.ferrao-seta{
-  width: 9rem;
-  height: auto;
+
+.see-more {
+  position: relative;
+  display: inline-flex;
   align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  padding: 1rem;
+  text-decoration: none;
+  color: #fff;
+  text-shadow: 0 0 1px #fff, 0 0 4px #fff;
+}
+
+.see-more:hover {
+  text-shadow: 0 0 3px #fff, 0 0 6px #fff, 0 0 9px #fff;
 }
 
 .see-more .ferrao-seta {
+  width: 9rem;
   transition: transform 0.3s ease;
 }
 
@@ -231,20 +242,21 @@ header img {
   transform: translateX(5px);
 }
 
+
 .see-more::before,
 .see-more::after {
   content: "";
   position: absolute;
+  top: 50%;
   width: 25px;
   height: 25px;
   background-image: url("Assets/Images/ChatGPT Image 19 de fev. de 2026, 13_50_32.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  transform: translateY(-50%);
   opacity: 0;
   transition: 0.3s ease;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 .see-more::before {
@@ -256,18 +268,11 @@ header img {
   right: -35px;
 }
 
-.see-more:hover {
-  text-shadow: 0 0 3px #fff, 0 0 6px #fff, 0 0 9px #fff;
-}
-
 .see-more:hover::before,
 .see-more:hover::after {
   opacity: 1;
 }
 
-.news-content {
-  padding: 1rem 2.5rem;
-}
 
 .corner {
   position: absolute;
@@ -306,5 +311,4 @@ header img {
 
 .news-card:hover .corner {
   opacity: 1;
-  
 }
