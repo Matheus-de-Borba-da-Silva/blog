@@ -31,19 +31,24 @@
 
         <div class="linha-neon"></div>
     </header>
-    <main>
-        <section class="npcs">
-            <div class="npc">
-                <img src="" alt="">
-                <h3>ElderBug</h3>
+    <main class="diario-container">
+        <aside class="col-lista">
+            <div class="card-item active" onclick="trocar('elderbug')">
+                <img src="icon_elder.png"> <span>Elderbug</span>
+            </div>
+        </aside>
+
+        <section class="col-visual">
+            <div class="moldura-personagem">
+                <img id="img-grande" src="../Assets/npcs/Elderbug.webp">
             </div>
         </section>
-        <section class="Enimigos">
 
-        </section>
-        <section class="Bosses">
-
-        </section>
+        <aside class="col-info">
+            <h2 id="txt-nome">Elderbug</h2>
+            <div class="separador-estilizado"></div>
+            <p id="txt-lore">O residente mais velho de Dirtmouth</p>
+        </aside>
     </main>
     <footer>
 
